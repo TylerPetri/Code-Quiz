@@ -36,7 +36,7 @@
         font-weight:bold;
         color:whitesmoke;
     }
-    #scoreCard, #infoPage {
+    #scoreCard {
         top:15%;
         bottom:15%;
         left:15%;
@@ -59,9 +59,15 @@
         background-color: #48371C;
     }
     #info-text{
-        position:absolute;
-        top:40%;
-        left:41.25%;
+        border: 3px solid rgb(248, 246, 99);
+        background-color: black;
+        color:turquoise;
+    }
+    #userName {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 100%;
+        font-weight: bold;
+        color:#48371C
     }
 
 
@@ -85,22 +91,26 @@
         </div>
     </div>
 
-    <div class='card d-none position-absolute' id="infoPage">
+    <!-- <div class='card d-none position-absolute' id="infoPage">
         <form id='formInput' method="POST">
             <label for='info-text'>Name</label>
             <input type="text" id="info-text" >
             <button onClick="enterInfo()" class="btn rounded-0 position-absolute start-50 top-50 translate-middle" id="eI"><span style="color:white">Submit</span></button>
         </form>
-    </div>
+    </div> -->
 
 
     <div class="card position-absolute d-none rounded-0" id="scoreCard">
         <div class="card-body">
             <h5 class="card-title text-align-center" id="finalScore">Final score</h5>
             <p class="card-text" id="score">
-                <ul id="list">
-
-                </ul>
+        <div class="row position-absolute bottom-0 start-50 translate-middle-x">
+            <form id="infoPage" method="POST">
+                <label for='info-text'><span id='userName'>Name</span></label>
+                <input type="text" id="info-text" >
+                <button onClick="enterInfo()" class="btn rounded-0 mb-1" id="eI"><span style="color:white">Submit</span></button>
+            </form>
+        </div></div>
             </p>
         </div>
     </div>
@@ -117,7 +127,8 @@
     var y = document.getElementById('questions')
     var z = document.getElementById('scoreCard')
 
-    var infos = []
+    // var infos = []
+    // var scr = []
     
 
     var questions = [
@@ -195,6 +206,7 @@
     }
     function stopQuiz(){
         y.classList.add('d-none')
+        z.classList.remove('d-none')
         w.classList.remove('d-none')
         clearInterval(countdownTimer)
         
@@ -205,26 +217,27 @@
         var names = document.querySelector('#info-text').value
         localStorage.setItem("infos", JSON.stringify(names))
         localStorage.setItem("scr", JSON.stringify(totScore))
-            z.classList.remove('d-none')
             w.classList.add('d-none')
-        renderInfo()    
+        renderInfo()
     }
 
     function renderInfo(){
         var personInfo = JSON.parse(localStorage.getItem("infos"))
         var scoreOut = JSON.parse(localStorage.getItem("scr"))
         document.querySelector('#score').textContent += `${personInfo} ${scoreOut}`
-    
-
-        for(let i=0; i<infos.length; i++){
-            var info = infos[i]
-
-            var li = document.createElement("li")
-            li.textContent = info
-
-            list.appendChild(info)
-        }
     }
+
+    // function renderList(){
+    //     for(let i=0; i<infos.length; i++){
+    //         var info = infos[i]
+    //         var list = document.querySelector('#list').value
+
+    //         var li = document.createElement("li")
+    //         li.textContent = info
+
+    //         list.appendChild(info)
+    //     }
+    // }
 
     </script>
 </body>
