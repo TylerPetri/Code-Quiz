@@ -2,13 +2,12 @@ var countdownTimer
 var countdownValue 
 var questionNum
 var totScore
-var w = document.getElementById('infoPage')
+var u = document.getElementById('nameEnter')
 var x = document.getElementById('startQuiz')
 var y = document.getElementById('questions')
 var z = document.getElementById('scoreCard')
 
-// var infos = []
-// var scr = []
+var infos = []
 
 
 var questions = [
@@ -86,23 +85,42 @@ function selectAnswer(event,answer){
 }
 function stopQuiz(){
     y.classList.add('d-none')
-    z.classList.remove('d-none')
-    w.classList.remove('d-none')
-    clearInterval(countdownTimer)
-    
+    u.classList.remove('d-none')
+    clearInterval(countdownTimer) 
+    if(JSON.parse(localStorage.getItem("infos")) !== null){
+    infos = JSON.parse(localStorage.getItem("infos")) }  
 }
 
 function enterInfo(){
     event.preventDefault()
     var names = document.querySelector('#info-text').value
-    localStorage.setItem("infos", JSON.stringify(names))
-    localStorage.setItem("scr", JSON.stringify(totScore))
-        w.classList.add('d-none')
-    renderInfo()
+
+    if(names !== ""){
+        var results = {
+                        info: names,
+                        scorez: totScore
+                        }
+        infos.push(results)
+        localStorage.setItem("infos", JSON.stringify(infos))
+        }
+        renderInfo()
+        u.classList.add('d-none')
+        z.classList.remove('d-none')
+    document.querySelector('#tScore').textContent += totScore
 }
 
 function renderInfo(){
-    var personInfo = JSON.parse(localStorage.getItem("infos"))
-    var scoreOut = JSON.parse(localStorage.getItem("scr"))
-    document.querySelector('#score').textContent += `${personInfo} ${scoreOut}`
+    var highscores = JSON.parse(window.localStorage.getItem("infos")) || [];
+  highscores.sort(function(a, b) {
+    return b.scorez - a.scorez;
+  });
+  highscores.forEach(function(infos) {
+    var liTag = document.createElement("li");
+    liTag.textContent = infos.info + " - " + infos.scorez;
+    var olEl = document.getElementById("highscores");
+    olEl.appendChild(liTag);
+  });
+  if (highscores !== null) {
+    infos = highscores;
+  }
 }

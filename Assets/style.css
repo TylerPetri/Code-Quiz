@@ -25,8 +25,10 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight:bold;
     color:whitesmoke;
+    min-width:32%;
+    max-width:32%;
 }
-#scoreCard {
+#scoreCard, #nameEnter {
     top:15%;
     bottom:15%;
     left:15%;
@@ -34,17 +36,28 @@
     background-color:black;
     border: 3px solid green;
 }
+#nameTitle {
+    Color:turquoise;
+    font-size:50px;
+    text-align:center;
+}
 #finalScore {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size:35px;
     color:violet;
     text-align:center;
 }
-#score {
+#highscores {
+    text-align:center;
     font-family:'Times New Roman', Times, serif;
     font-size:25px;
     color:turquoise;
+    list-style-type:none;
+    padding: 0;
 }
+#highscores li:nth-of-type(1n+5) {
+    display: none;
+  }
 #eI {
     background-color: #48371C;
 }
@@ -53,9 +66,11 @@
     background-color: black;
     color:turquoise;
 }
-#userName {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100%;
-    font-weight: bold;
-    color:#48371C
+#personalScore {
+    font-size: 25px;
+    color:rgb(250, 248, 120)
+}
+#tScore {
+    font-size:35px;
+    color:turquoise;
 }

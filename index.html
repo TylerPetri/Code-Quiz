@@ -27,21 +27,26 @@
         </div>
     </div>
 
-    <div class="card position-absolute d-none rounded-0" id="scoreCard">
+    <div class="card position-absolute d-none rounded-0" id="nameEnter">
         <div class="card-body">
-            <h5 class="card-title text-align-center" id="finalScore">Final score</h5>
-            <p class="card-text" id="score">
-        <div class="row position-absolute bottom-0 start-50 translate-middle-x">
-            <form id="infoPage" method="POST">
-                <label for='info-text'><span id='userName'>Name</span></label>
-                <input type="text" id="info-text" >
-                <button onClick="enterInfo()" class="btn rounded-0 mb-1" id="eI"><span style="color:white">Submit</span></button>
-            </form>
-        </div></div>
-            </p>
+            <h5 class="card-title" id="nameTitle">ENTER INITIALS</h5>
+                <form class="position-absolute bottom-50 start-50 translate-middle" id="infoPage" method="POST">
+                    <input type="text" id="info-text" >
+                    <button onClick="enterInfo()" class="btn rounded-0 mb-1" id="eI"><span style="color:white">Submit</span></button>
+                </form>
         </div>
     </div>
-    
+
+    <div class="card position-absolute d-none rounded-0" id="scoreCard">
+        <div class="card-body">
+            <h5 class="card-title text-align-center" id="finalScore">Highscores</h5>
+            <p class="card-text">
+                <ul id="highscores"></ul>
+            </p>
+            <br><br><br>
+            <p id='yourScore'><span id="personalScore">Your score is: </span><span id="tScore"></span></p>
+        </div>
+    </div>
 
 <script src="Assets/script.js"></script>
 
