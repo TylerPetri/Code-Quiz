@@ -1,0 +1,61 @@
+#startQuiz {
+    margin-top:200px;
+    height:150px;
+    width:250px;
+}
+.sQ {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:40px;
+    font-weight:bold;
+    margin:auto;
+    text-align:center;
+}
+.questionColor{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:40px;
+    font-weight:bold;
+    text-align:center;
+    color:seagreen;
+}
+#questionBox {
+    background-color:black;
+}
+#answerBTN {
+    background-color:#48371C;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:bold;
+    color:whitesmoke;
+}
+#scoreCard {
+    top:15%;
+    bottom:15%;
+    left:15%;
+    right:15%;
+    background-color:black;
+    border: 3px solid green;
+}
+#finalScore {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:35px;
+    color:violet;
+    text-align:center;
+}
+#score {
+    font-family:'Times New Roman', Times, serif;
+    font-size:25px;
+    color:turquoise;
+}
+#eI {
+    background-color: #48371C;
+}
+#info-text{
+    border: 3px solid rgb(248, 246, 99);
+    background-color: black;
+    color:turquoise;
+}
+#userName {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    color:#48371C
+}
