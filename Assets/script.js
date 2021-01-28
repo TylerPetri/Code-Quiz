@@ -11,27 +11,44 @@ var infos = []
 
 
 var questions = [
-{ question: "Who created Linux?", 
-  answers: [ "Justin Bieber", "Johnathan Bell", "Linus Torvalds" ],
-  correct: "Linus Torvalds" },
-{ question: "Who invented the iPhone?", 
-  answers: [ "Hewlett Packard", "Steve Jobs", "Steve Jacobs" ],
-  correct: "Steve Jobs" },
-{ question: "Who invented the internet?",
-  answers: [ "Aliens", "Europe", "DARPA" ],
-  correct: "DARPA" }
+{ question: "Can a match box?", 
+  answers: [ "Yes", "No", "No, but a tin can" ],
+  correct: "No, but a tin can" },
+{ question: "What can you put in a bucket to make it lighter?", 
+  answers: [ "Gypsies", "Torch", "Canned laughter" ],
+  correct: "Torch" },
+{ question: "What is the 7th letter of the alphabet?",
+  answers: [ "H", "I", "G" ],
+  correct: "H" },
+{ question: "The choice is yours",
+  answers: ["+1 life", "-1 life", "+1 skip"],
+  correct: "+1 skip"},
+{ question: "How many holes in a polo?",
+  answers: ["Two", "Three", "Four"],
+  correct: "Four"},
+{ question: "The answer is really big",
+  answers: ["An elephant", "THE ANSWER", "Really Big"],
+  correct: "An elephant"},
+{ question: "Which of these places doesn't exist?",
+  answers: ["Brown Willy", "Arsefacey", "Bitchfield"],
+  correct: "Arsefacey"},
+{ question: "What flavour is cardboard?",
+  answers: ["Honey", "Pork scratchings", "Egg mayonnaise"],
+  correct: "Egg mayonnaise"}
 ]
 
 
 function startQuiz(){
 questionNum = 0
 totScore = 0
+countdownValue = 60
+document.querySelector('#tScore').textContent = null
 showNextQuestion()
 timerStart()
 }          
 
 function timerStart(){
-    countdownValue = document.querySelector('#timer').innerHTML
+    countdownValue = document.querySelector('#timer').textContent = countdownValue
     countdownTimer = setInterval( timerDecreaseAndDisplay, 1000 )
         if (x.style.display === 'none') {
             x.style.display = 'block';
@@ -74,11 +91,13 @@ function selectAnswer(event,answer){
     event.preventDefault()
     if(answer === questions[questionNum].correct){
         totScore += 1000000
-    }
+        } else {
+            wrongAnswer()
+        }
     questionNum++
-    if(questionNum > 2){
+    if(questionNum > 7){
         stopQuiz()
-    } else {
+    } else { 
         showNextQuestion()
     }
     console.log(totScore)
@@ -123,4 +142,11 @@ function renderInfo(){
   if (highscores !== null) {
     infos = highscores;
   }
+}
+
+function tryAgain(){
+    z.classList.add('d-none')
+    x.classList.add('d-none')
+    document.querySelector('#highscores').textContent = ""
+    startQuiz()
 }

@@ -2,7 +2,10 @@
     margin-top:200px;
     height:150px;
     width:250px;
+    background-color: rgb(54, 197, 116);
+    border: 3px solid #48371C;
 }
+
 .sQ {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:40px;
@@ -10,6 +13,7 @@
     margin:auto;
     text-align:center;
 }
+
 .questionColor{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:40px;
@@ -17,9 +21,11 @@
     text-align:center;
     color:seagreen;
 }
+
 #questionBox {
     background-color:black;
 }
+
 #answerBTN {
     background-color:#48371C;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -28,25 +34,44 @@
     min-width:32%;
     max-width:32%;
 }
-#scoreCard, #nameEnter {
+
+#endQuiz {
+    max-width:110px
+}
+
+#nameEnter, #scoreCard {
     top:15%;
     bottom:15%;
     left:15%;
     right:15%;
     background-color:black;
-    border: 3px solid green;
+    border: 3px solid seagreen;
 }
+
 #nameTitle {
     Color:turquoise;
     font-size:50px;
     text-align:center;
 }
+
+#info-text{
+    border: 3px solid rgb(248, 246, 99);
+    background-color: black;
+    color:turquoise;
+}
+
+#enterInfoBTN {
+    background-color: #48371C;
+    color:white;
+}
+
 #finalScore {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size:35px;
     color:violet;
     text-align:center;
 }
+
 #highscores {
     text-align:center;
     font-family:'Times New Roman', Times, serif;
@@ -55,22 +80,27 @@
     list-style-type:none;
     padding: 0;
 }
+
 #highscores li:nth-of-type(1n+5) {
     display: none;
-  }
-#eI {
-    background-color: #48371C;
 }
-#info-text{
-    border: 3px solid rgb(248, 246, 99);
-    background-color: black;
-    color:turquoise;
-}
+
 #personalScore {
     font-size: 25px;
     color:rgb(250, 248, 120)
 }
+
+#yourScore {
+    margin-left: 10%;
+}
+
 #tScore {
     font-size:35px;
     color:turquoise;
+}
+
+#restartBTN {
+    background-color: rgb(54, 197, 116);
+    border: 3px solid #48371C;
+    font-weight:bold;
 }

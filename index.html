@@ -18,12 +18,12 @@
 
 
     <div class="container d-none" id="questions" style="padding-top:150px">
-        <h1 id="timer" style="color:rgb(245, 107, 215); text-align:center;">60</h1>
+        <h1 id="timer" style="color:rgb(245, 107, 215); text-align:center;"></h1>
         <div class="card my-3 rounded-0">
             <div class="card-body" id="questionBox"></div>
         </div>
         <div class="row">
-            <button onClick='stopQuiz()' id='endQuiz' type='button' class='btn btn-danger mx-auto' style="max-width: 110px;">End quiz</button>
+            <button onClick='stopQuiz()' id='endQuiz' type='button' class='btn btn-danger mx-auto'>End quiz</button>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
             <h5 class="card-title" id="nameTitle">ENTER INITIALS</h5>
                 <form class="position-absolute bottom-50 start-50 translate-middle" id="infoPage" method="POST">
                     <input type="text" id="info-text" >
-                    <button onClick="enterInfo()" class="btn rounded-0 mb-1" id="eI"><span style="color:white">Submit</span></button>
+                    <button onClick="enterInfo()" class="btn rounded-0 mb-1" id="enterInfoBTN">Submit</button>
                 </form>
         </div>
     </div>
@@ -45,6 +45,7 @@
             </p>
             <br><br><br>
             <p id='yourScore'><span id="personalScore">Your score is: </span><span id="tScore"></span></p>
+            <button onClick="tryAgain()" class="btn position-absolute bottom-0 start-50 translate-middle-x mb-4" id="restartBTN">Try again</button>
         </div>
     </div>
 
